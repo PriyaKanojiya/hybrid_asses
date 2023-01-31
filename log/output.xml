@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230130 14:52:38.046" rpa="false" schemaversion="3">
+<suite id="s1" name="Mobile" source="C:\robot_project\Starbucks_Automation\Mobile_Automation\mobile.robot">
+<test id="s1-t1" name="TC1" line="4">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>platformName=android</arg>
+<arg>deviceName=oppoA1601</arg>
+<arg>appPackage=com.ubercab</arg>
+<arg>appActivity=com.ubercab.presidio.app.core.root.RootActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230130 14:52:40.838" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230130 14:52:40.838" endtime="20230130 14:52:40.848"/>
+</kw>
+<msg timestamp="20230130 14:52:40.848" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230130 14:52:40.853" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
+This adb server's $ADB_VENDOR_KEYS is not set
+Try 'adb kill-server' if that seems wrong.
+Otherwise check for a confirmation dialog on your device.
+
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
+This adb server's $ADB_VENDOR_KEYS is not set
+Try 'adb kill-server' if that seems wrong.
+Otherwise check for a confirmation dialog on your device.
+
+    at getResponseForW3CError (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</msg>
+<status status="FAIL" starttime="20230130 14:52:38.308" endtime="20230130 14:52:40.855"/>
+</kw>
+<kw name="Get Source" library="AppiumLibrary">
+<var>${page_source}</var>
+<doc>Returns the entire source of the current page.</doc>
+<status status="NOT RUN" starttime="20230130 14:52:40.855" endtime="20230130 14:52:40.856"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${page_source}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230130 14:52:40.856" endtime="20230130 14:52:40.857"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230130 14:52:40.857" endtime="20230130 14:52:40.858"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230130 14:52:40.860" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230130 14:52:40.859" endtime="20230130 14:52:40.861"/>
+</kw>
+<msg timestamp="20230130 14:52:40.863" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230130 14:52:40.864" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230130 14:52:40.858" endtime="20230130 14:52:40.865">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20230130 14:52:38.293" endtime="20230130 14:52:40.865">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
+This adb server's $ADB_VENDOR_KEYS is not set
+Try 'adb kill-server' if that seems wrong.
+Otherwise check for a confirmation dialog on your device.
+
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
+This adb server's $ADB_VENDOR_KEYS is not set
+Try 'adb kill-server' if that seems wrong.
+Otherwise check for a confirmation dialog on your device.
+
+    at getResponseForW3CError (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20230130 14:52:38.052" endtime="20230130 14:52:40.866"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Mobile">Mobile</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230130 14:52:40.848" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230130 14:52:40.863" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
