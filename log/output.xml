@@ -1,98 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230130 14:52:38.046" rpa="false" schemaversion="3">
-<suite id="s1" name="Mobile" source="C:\robot_project\Starbucks_Automation\Mobile_Automation\mobile.robot">
-<test id="s1-t1" name="TC1" line="4">
-<kw name="Open Application" library="AppiumLibrary">
-<arg>remote_url=http://localhost:4723/wd/hub</arg>
-<arg>platformName=android</arg>
-<arg>deviceName=oppoA1601</arg>
-<arg>appPackage=com.ubercab</arg>
-<arg>appActivity=com.ubercab.presidio.app.core.root.RootActivity</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20230130 14:52:40.838" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20230130 14:52:40.838" endtime="20230130 14:52:40.848"/>
+<robot generator="Robot 6.0.2 (Python 3.9.13 on win32)" generated="20230206 16:58:58.407" rpa="false" schemaversion="3">
+<suite id="s1" name="Menu" source="C:\robot_project\Starbucks_Automation\2_General_Menu\menu.robot">
+<test id="s1-t1" name="TC1" line="12">
+<kw name="Launch Browser And Navigate To Url" library="common_functionalities" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230206 16:58:58.686" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230206 16:58:58.686" endtime="20230206 16:59:00.389"/>
 </kw>
-<msg timestamp="20230130 14:52:40.848" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20230130 14:52:40.853" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
-This adb server's $ADB_VENDOR_KEYS is not set
-Try 'adb kill-server' if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-Stacktrace:
-UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
-This adb server's $ADB_VENDOR_KEYS is not set
-Try 'adb kill-server' if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-    at getResponseForW3CError (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)</msg>
-<status status="FAIL" starttime="20230130 14:52:38.308" endtime="20230130 14:52:40.855"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230206 16:59:00.391" endtime="20230206 16:59:00.528"/>
 </kw>
-<kw name="Get Source" library="AppiumLibrary">
-<var>${page_source}</var>
-<doc>Returns the entire source of the current page.</doc>
-<status status="NOT RUN" starttime="20230130 14:52:40.855" endtime="20230130 14:52:40.856"/>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230206 16:59:00.529" endtime="20230206 16:59:00.531"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${page_source}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230130 14:52:40.856" endtime="20230130 14:52:40.857"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230206 16:59:00.532" level="INFO">Opening url 'https://www.starbucks.com/'</msg>
+<status status="PASS" starttime="20230206 16:59:00.531" endtime="20230206 16:59:02.410"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>30s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230130 14:52:40.857" endtime="20230130 14:52:40.858"/>
+<status status="PASS" starttime="20230206 16:58:58.686" endtime="20230206 16:59:02.410"/>
 </kw>
-<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20230130 14:52:40.860" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20230130 14:52:40.859" endtime="20230130 14:52:40.861"/>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230206 16:59:02.412" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230206 16:59:02.411" endtime="20230206 16:59:03.925"/>
 </kw>
-<msg timestamp="20230130 14:52:40.863" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20230130 14:52:40.864" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20230130 14:52:40.858" endtime="20230130 14:52:40.865">No application is open</status>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230206 16:59:03.925" endtime="20230206 16:59:04.061"/>
 </kw>
-<status status="FAIL" starttime="20230130 14:52:38.293" endtime="20230130 14:52:40.865">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
-This adb server's $ADB_VENDOR_KEYS is not set
-Try 'adb kill-server' if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-Stacktrace:
-UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\40032345\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s e478333b shell getprop ro.build.version.sdk' exited with code 1'; Command output: adb.exe: device unauthorized.
-This adb server's $ADB_VENDOR_KEYS is not set
-Try 'adb kill-server' if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-    at getResponseForW3CError (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\40032345\component\Appium-Server-GUI-windows-1.22.3-4\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
-
-Also teardown failed:
-No application is open</status>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=https://www.starbucks.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230206 16:59:04.063" level="INFO">Opening url 'https://www.starbucks.com/'</msg>
+<status status="PASS" starttime="20230206 16:59:04.062" endtime="20230206 16:59:05.544"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[text()='Menu']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230206 16:59:05.547" level="INFO">Clicking element 'xpath=//a[text()='Menu']'.</msg>
+<status status="PASS" starttime="20230206 16:59:05.545" endtime="20230206 16:59:13.078"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@class='block linkOverlay__primary tile___1wb3i']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230206 16:59:13.079" level="INFO">Clicking element 'xpath=//*[@class='block linkOverlay__primary tile___1wb3i']'.</msg>
+<status status="PASS" starttime="20230206 16:59:13.078" endtime="20230206 16:59:13.398"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230206 16:59:13.401" endtime="20230206 16:59:15.679"/>
+</kw>
+<status status="PASS" starttime="20230206 16:58:58.686" endtime="20230206 16:59:15.679"/>
 </test>
-<status status="FAIL" starttime="20230130 14:52:38.052" endtime="20230130 14:52:40.866"/>
+<doc>This file contains test cases related to invalid login</doc>
+<status status="PASS" starttime="20230206 16:58:58.423" endtime="20230206 16:59:15.680"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Mobile">Mobile</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Menu">Menu</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230130 14:52:40.848" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20230130 14:52:40.863" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230206 16:58:58.686" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\robot_project\Starbucks_Automation\2_General_Menu\menu.robot", line 0</msg>
+<msg timestamp="20230206 16:58:58.686" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was empty. Tried to find C:\robot_project\Starbucks_Automation\2_General_Menu\menu.csv but file does not exist. If no file validation is required, set file_search_strategy=None.</msg>
 </errors>
 </robot>
