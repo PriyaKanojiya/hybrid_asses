@@ -1,0 +1,30 @@
+1675836451060	geckodriver	INFO	Listening on 127.0.0.1:51330
+1675836454133	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51331" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032345\\AppData\\Local\\Temp\\rust_mozprofileTPBltC"
+1675836454772	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032345\\AppData\\Local\\Temp\\rust_mozprofileTPBltC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51331/devtools/browser/34c8a0d3-1c7f-4966-852d-770b6c1ec85f
+1675836459042	Marionette	INFO	Listening on port 51361
+Read port: 51361
+1675836459105	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1675836975721	addons.xpi	ERROR	Failed to download system add-on webcompat@mozilla.org: Error: Failed downloading via ServiceRequest, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:435:16) JS Stack trace: fail@ProductAddonChecker.jsm:435:16
+1675837315751	Marionette	INFO	Stopped listening on port 51361
+Z"
+1675836485828	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032345\\AppData\\Local\\Temp\\rust_mozprofileAIQ4NZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51392/devtools/browser/24ca6c4a-0009-4e7e-ba7e-975c76b9c90d
+1675836488784	Marionette	INFO	Listening on port 51420
+Read port: 51420
+1675836488867	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1675837006682	addons.xpi	ERROR	Failed to download system add-on webcompat@mozilla.org: Error: Failed downloading via ServiceRequest, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:435:16) JS Stack trace: fail@ProductAddonChecker.jsm:435:16
+1675837310381	Marionette	INFO	Stopped listening on port 51420
+e"
+1675836547022	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032345\\AppData\\Local\\Temp\\rust_mozprofile9Zfvke\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51461/devtools/browser/c56e99a6-04eb-4954-afce-7c95a483407a
+1675836549639	Marionette	INFO	Listening on port 51492
+Read port: 51492
+1675836549722	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1675837314208	Marionette	INFO	Stopped listening on port 51492
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

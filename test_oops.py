@@ -1,5 +1,13 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
+
+class menu():
+    def click_menu():
+        return 0
+
+
 class Starbucks:
     def __init__(self, browser='Edge'):
         if browser == 'Edge':
@@ -16,6 +24,7 @@ class Starbucks:
         self.driver.find_element(By.XPATH,"//a[text()='Menu']").click()
         self.driver.find_element(By.XPATH,"//*[@class='block linkOverlay__primary tile___1wb3i']").click()
 
+
 class StarbucksMenu(Starbucks):
     def __init__(self, browser='Edge'):
         Starbucks.__init__(self, browser)
@@ -26,17 +35,18 @@ class StarbucksMenu(Starbucks):
         try:
             self.driver.find_element(By.XPATH,"//*[@class='block linkOverlay__primary tile___1wb3']").click()
         except:
-            print("Invalid xpath")
-s = StarbucksMenu()
-#menudriven
-while True:
-    print("Enter 1 for select")
-    print("Enter 2 for exception")
-    print("Enter 3 for exit")
-    userchoice=int(input())
-    if userchoice==1:
-        s.click_menu()
-    elif  userchoice==2:
-        s.exception1()
-    elif  userchoice==3:
-       quit()
+            print("Invalid xpath")\
+
+@pytest.mark.fixture()
+def StarbucksMenu():
+    s = StarbucksMenu()
+    yield s
+    s.driver.quit()
+
+def test_click_menu(s):
+    s.click_menu()
+    assert s.driver.current_url == "https://www.starbucks.com/menu"
+
+def test_exception1(s):
+    s.exception1()
+    assert "Invalid xpath" in s.driver.page_source
